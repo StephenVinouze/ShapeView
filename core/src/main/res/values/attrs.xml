@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ShapeView">
+        <attr name="shapeColor" format="color" />
+        <attr name="shapeStrokeColor" format="color" />
+        <attr name="shapeStrokeWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="TicketShapeView">
+        <attr name="outerRadius" format="dimension" />
+        <attr name="innerRadius" format="dimension" />
+        <attr name="innerOffset" format="dimension" />
+        <attr name="innerMargin" format="dimension" />
+    </declare-styleable>
+</resources>

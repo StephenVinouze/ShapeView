@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ShapeView</string>
+    <string name="shape_half_circle">Half circle edge shape</string>
+    <string name="shape_ticket">Ticket shape</string>
 </resources>

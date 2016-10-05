@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.github.stephenvinouze.shapeview.shapes.TicketShapeView
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        app:innerOffset="30dp"
+        app:outerRadius="7dp"
+        app:shapeColor="@color/colorAccent"
+        app:innerRadius="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Draw a ticket shape with plain color.\nYou can configure both inner and outer radius"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+
+    </com.github.stephenvinouze.shapeview.shapes.TicketShapeView>
+
+    <com.github.stephenvinouze.shapeview.shapes.TicketShapeView
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        app:innerOffset="40dp"
+        app:outerRadius="5dp"
+        app:shapeColor="@color/colorAccent"
+        app:innerRadius="10dp">
+
+        <com.github.stephenvinouze.shapeview.shapes.TicketShapeView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            app:innerOffset="40dp"
+            app:outerRadius="5dp"
+            app:innerMargin="2dp"
+            app:shapeColor="@android:color/white"
+            app:innerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Draw a ticket shape with stroke color.\nYou can also configure where the inner corner is drawn"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+        </com.github.stephenvinouze.shapeview.shapes.TicketShapeView>
+
+    </com.github.stephenvinouze.shapeview.shapes.TicketShapeView>
+
+</LinearLayout>
