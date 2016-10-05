@@ -41,4 +41,7 @@ Finally, *ShapeView* extends from *RelativeLayout* so you can easily put any vie
 This library provides two shapes: a basic *HalfCircleEdgeShapeView* and a more complex *TicketShapeView*
 
 ### HalfCircleEdgeShapeView
-This class extends from *ShapeView* and overrides both `onSizeChanged()` and `onDraw()` methods. The idea is to draw a shape with half circle at both left and right edges by using the `Path` instance. This shape can then be convenently used as a *Button*.
+This class extends from *ShapeView* and overrides both `onSizeChanged()` and `onDraw()` methods. The idea is to draw a shape with half circle at both left and right edges by using the `Path` instance. This shape can for instance be used as a *Button*.
+
+### TicketShapeView
+Similar to the previous shape, we define the shape using the `Path` instance to draw a ticket like shape. We provide a few custom XML attributes to define both `innerRadius` and `outerRadius` that will be applied to this shape. You can also specify where the inner radius will be applied.
