@@ -47,8 +47,37 @@ This library provides two shapes: a basic *HalfCircleEdgeShapeView* and a more c
 ### HalfCircleEdgeShapeView
 This class extends from *ShapeView* and overrides both `onSizeChanged()` and `onDraw()` methods. The idea is to draw a shape with half circle at both left and right edges by using the `Path` instance. This shape can for instance be used as a *Button*.
 
+```xml
+<com.github.stephenvinouze.shapeview.shapes.HalfCircleEdgeShapeView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        app:shapeColor="@color/colorAccent"
+        app:shapeStrokeColor="@color/colorPrimaryDark"
+        app:shapeStrokeWidth="2dp">
+	
+	<!-- Any subviews you want -->
+	
+</com.github.stephenvinouze.shapeview.shapes.HalfCircleEdgeShapeView>
+```
+
 ### TicketShapeView
 Similar to the previous shape, we define the shape using the `Path` instance to draw a ticket like shape. We provide a few custom XML attributes to define both `innerRadius` and `outerRadius` that will be applied to this shape. You can also specify where the inner radius will be applied.
+
+```xml
+<com.github.stephenvinouze.shapeview.shapes.TicketShapeView
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        app:innerOffset="30dp"
+        app:innerRadius="5dp"
+        app:outerRadius="7dp"
+        app:shapeColor="@color/colorAccent">
+	
+	<!-- Any subviews you want -->
+	
+</com.github.stephenvinouze.shapeview.shapes.TicketShapeView>
+```
 
 ## License
 
