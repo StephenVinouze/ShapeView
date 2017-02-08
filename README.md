@@ -4,7 +4,7 @@
 [![GitHub
 license](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://github.com/StephenVinouze/AdvancedRecyclerView/blob/master/LICENSE)
 
-Drawing shapes can be achieved in many ways and depend mostly on how complex your shape is. This library intends to leverage how to draw basic shapes so that you need only focus on how to draw your shape using this toolbox.
+Drawing shapes can be achieved in many ways and depend mostly on how complex your shape is. This Kotlin library intends to leverage how to draw basic shapes so that you need only focus on how to draw your shape using this toolbox.
 
 Half circle edge shape | Ticket shape
 ---- | ---- | ----
@@ -25,7 +25,7 @@ Then add the dependencies that you need in your project.
 
 ```gradle
 dependencies {
-  compile 'com.github.StephenVinouze:ShapeView:1.0.0'
+  compile 'com.github.StephenVinouze:ShapeView:1.1.0'
 }
 ```
 
@@ -35,6 +35,8 @@ An abstract *ShapeView* class allows you to configure two paths: one path is use
 * shapeColor: define which color will fill your shape
 * shapeStrokeColor: define which color will be used for the stroke around your shape (if any)
 * shapeStrokeWidth: define the width of your stroke (if any)
+* [NEW] shapeDashOnWidth: define the width of your stroke's dash filled line (if any)
+* [NEW] shapeDashOffWidth: define the width between your stroke's dash (if any)
 
 These attributes lets you define both in XML and programmatically your basic shapes. Starting from that, you can easily extend *ShapeView* to draw your own shapes by using the `Path` instance that the class provides.
 
@@ -55,7 +57,9 @@ This class extends from *ShapeView* and overrides both `onSizeChanged()` and `on
         android:padding="10dp"
         app:shapeColor="@color/colorAccent"
         app:shapeStrokeColor="@color/colorPrimaryDark"
-        app:shapeStrokeWidth="2dp">
+        app:shapeStrokeWidth="2dp"
+	app:shapeDashOnWidth="4dp"
+        app:shapeDashOffWidth="2dp">
 	
 	<!-- Any subviews you want -->
 	
