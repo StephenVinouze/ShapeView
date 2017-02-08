@@ -30,6 +30,8 @@
         android:layout_marginTop="20dp"
         android:padding="10dp"
         app:shapeStrokeColor="@color/colorAccent"
+        app:shapeDashOnWidth="4dp"
+        app:shapeDashOffWidth="2dp"
         app:shapeStrokeWidth="2dp">
 
         <TextView
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="Stroke shape"
+            android:text="Stroke shape with dash"
             android:textColor="@color/colorPrimary"
             android:textSize="17sp" />
 

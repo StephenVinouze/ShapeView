@@ -4,6 +4,8 @@
         <attr name="shapeColor" format="color" />
         <attr name="shapeStrokeColor" format="color" />
         <attr name="shapeStrokeWidth" format="dimension" />
+        <attr name="shapeDashOnWidth" format="dimension" />
+        <attr name="shapeDashOffWidth" format="dimension" />
     </declare-styleable>
     <declare-styleable name="TicketShapeView">
         <attr name="outerRadius" format="dimension" />

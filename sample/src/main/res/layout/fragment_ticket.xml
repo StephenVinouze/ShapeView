@@ -53,6 +53,7 @@
                 android:text="Draw a ticket shape with stroke color.\nYou can also configure where the inner corner is drawn"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+            <!-- -->
 
         </com.github.stephenvinouze.shapeview.shapes.TicketShapeView>
 

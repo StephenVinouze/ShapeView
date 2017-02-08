@@ -1,10 +1,7 @@
 package com.github.stephenvinouze.shapeview
 
 import android.content.Context
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Path
-import android.graphics.RectF
+import android.graphics.*
 import android.util.AttributeSet
 import android.widget.RelativeLayout
 
@@ -37,6 +34,20 @@ abstract class ShapeView : RelativeLayout {
             invalidate()
         }
 
+    protected var dashOnSize: Int = 0
+        set(value) {
+            field = value
+            applyDashEffect()
+            invalidate()
+        }
+
+    protected var dashOffSize: Int = 0
+        set(value) {
+            field = value
+            applyDashEffect()
+            invalidate()
+        }
+
     constructor(context: Context) : this(context, null)
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
@@ -47,6 +58,8 @@ abstract class ShapeView : RelativeLayout {
         color = a.getColor(R.styleable.ShapeView_shapeColor, Color.TRANSPARENT)
         strokeColor = a.getColor(R.styleable.ShapeView_shapeStrokeColor, Color.TRANSPARENT)
         strokeSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeWidth, 0)
+        dashOnSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeDashOnWidth, 0)
+        dashOffSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeDashOffWidth, 0)
 
         a.recycle()
 
@@ -55,6 +68,10 @@ abstract class ShapeView : RelativeLayout {
 
         shapeBorderPaint.isDither = true
         shapeBorderPaint.style = Paint.Style.STROKE
+    }
+
+    private fun applyDashEffect() {
+        shapeBorderPaint.pathEffect = DashPathEffect(floatArrayOf(dashOnSize.toFloat(), dashOffSize.toFloat()), 0f)
     }
 
 }
