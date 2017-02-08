@@ -42,15 +42,6 @@ abstract class ShapeView : RelativeLayout {
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         setBackgroundColor(Color.TRANSPARENT)
 
-        shapePaint.isDither = true
-        shapePaint.style = Paint.Style.FILL
-        shapePaint.color = color
-
-        shapeBorderPaint.isDither = true
-        shapeBorderPaint.style = Paint.Style.STROKE
-        shapeBorderPaint.color = strokeColor
-        shapeBorderPaint.strokeWidth = strokeSize.toFloat()
-
         val a = context.theme.obtainStyledAttributes(attrs, R.styleable.ShapeView, 0, 0)
 
         color = a.getColor(R.styleable.ShapeView_shapeColor, Color.TRANSPARENT)
@@ -58,6 +49,12 @@ abstract class ShapeView : RelativeLayout {
         strokeSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeWidth, 0)
 
         a.recycle()
+
+        shapePaint.isDither = true
+        shapePaint.style = Paint.Style.FILL
+
+        shapeBorderPaint.isDither = true
+        shapeBorderPaint.style = Paint.Style.STROKE
     }
 
 }
