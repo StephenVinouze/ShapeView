@@ -1,6 +1,7 @@
 # ShapeView
 [![Release](https://jitpack.io/v/StephenVinouze/ShapeView.svg)](https://jitpack.io/#StephenVinouze/ShapeView)
 [![API](https://img.shields.io/badge/API-1%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=1)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShapeView-red.svg?style=flat)](https://android-arsenal.com/details/1/5240)
 [![GitHub
 license](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://github.com/StephenVinouze/AdvancedRecyclerView/blob/master/LICENSE)
 
