@@ -8,7 +8,7 @@ license](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://github.c
 Drawing shapes can be achieved in many ways and depend mostly on how complex your shape is. This Kotlin library intends to leverage how to draw basic shapes so that you need only focus on how to draw your shape using this toolbox.
 
 Half circle edge shape | Ticket shape
----- | ---- | ----
+---- | ----
 ![Half circle edge shape](art/half_circle_edge.png) | ![Ticket shape](art/ticket.png)
 
 ## Gradle Dependency
