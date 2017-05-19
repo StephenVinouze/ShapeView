@@ -26,7 +26,7 @@ Then add the dependencies that you need in your project.
 
 ```gradle
 dependencies {
-  compile 'com.github.StephenVinouze:ShapeView:1.1.0'
+  compile 'com.github.StephenVinouze:ShapeView:1.1.1'
 }
 ```
 
