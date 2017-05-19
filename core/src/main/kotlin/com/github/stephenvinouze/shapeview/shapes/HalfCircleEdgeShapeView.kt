@@ -21,25 +21,29 @@ class HalfCircleEdgeShapeView : ShapeView {
 
         val width = w - strokeSize
         val height = h - strokeSize
-
+        
         shapePath = Path()
-        shapePath!!.moveTo((height + strokeSize).toFloat(), strokeSize.toFloat())
-        shapePath!!.lineTo((width - height).toFloat(), strokeSize.toFloat())
-        // right corner
-        shapeCurveRect.set((width - height).toFloat(), strokeSize.toFloat(), width.toFloat(), height.toFloat())
-        shapePath!!.arcTo(shapeCurveRect, 270f, SWEEP_ANGLE.toFloat())
-        shapePath!!.lineTo((height + 2 * strokeSize).toFloat(), height.toFloat())
-        // left corner
-        shapeCurveRect.set(strokeSize.toFloat(), strokeSize.toFloat(), (height + 2 * strokeSize).toFloat(), height.toFloat())
-        shapePath!!.arcTo(shapeCurveRect, 90f, SWEEP_ANGLE.toFloat())
-        shapePath!!.close()
+        shapePath?.let {
+            it.moveTo((height + strokeSize).toFloat(), strokeSize.toFloat())
+            it.lineTo((width - height).toFloat(), strokeSize.toFloat())
+            // right corner
+            shapeCurveRect.set((width - height).toFloat(), strokeSize.toFloat(), width.toFloat(), height.toFloat())
+            it.arcTo(shapeCurveRect, 270f, SWEEP_ANGLE.toFloat())
+            it.lineTo((height + 2 * strokeSize).toFloat(), height.toFloat())
+            // left corner
+            shapeCurveRect.set(strokeSize.toFloat(), strokeSize.toFloat(), (height + 2 * strokeSize).toFloat(), height.toFloat())
+            it.arcTo(shapeCurveRect, 90f, SWEEP_ANGLE.toFloat())
+            it.close()
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        canvas.drawPath(shapePath!!, shapePaint)
-        canvas.drawPath(shapePath!!, shapeBorderPaint)
+        shapePath?.let {
+            canvas.drawPath(it, shapePaint)
+            canvas.drawPath(it, shapeBorderPaint)
+        }
     }
 
     companion object {

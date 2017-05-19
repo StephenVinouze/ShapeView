@@ -37,49 +37,53 @@ class TicketShapeView : ShapeView {
         val height = (h - innerMargin).toFloat()
 
         shapePath = Path()
-        //top left corner
-        shapePath!!.moveTo(width - innerRadius, innerMargin.toFloat())
-        shapePath!!.lineTo(width - innerRadius, innerMargin.toFloat())
-        //top right corner
-        shapeCurveRect.set(width - innerRadius, innerMargin.toFloat(), width, (innerMargin + innerRadius).toFloat())
-        shapePath!!.arcTo(shapeCurveRect, 270f, SWEEP_ANGLE.toFloat())
-        shapePath!!.lineTo(width, (innerOffset - innerMargin).toFloat())
-        //top right curve
-        shapeCurveRect.set(width - outerRadius, (innerOffset - innerMargin).toFloat(), width, (innerOffset - innerMargin + outerRadius).toFloat())
-        shapePath!!.arcTo(shapeCurveRect, 270f, (-SWEEP_ANGLE).toFloat())
-        shapePath!!.lineTo(width - outerRadius, height - innerOffset.toFloat() - outerRadius.toFloat())
-        //bottom right curve
-        shapeCurveRect.set(width - outerRadius, height - innerOffset + innerMargin - outerRadius, width, height - innerOffset + 2 * innerMargin)
-        shapePath!!.arcTo(shapeCurveRect, 180f, (-SWEEP_ANGLE).toFloat())
-        shapePath!!.lineTo(width, height - innerOffset + 2 * innerMargin)
-        //bottom right corner
-        shapePath!!.lineTo(width, height - innerRadius)
-        shapeCurveRect.set(width - innerRadius, height - innerRadius, width, height)
-        shapePath!!.arcTo(shapeCurveRect, 0f, SWEEP_ANGLE.toFloat())
-        //bottom left corner
-        shapePath!!.lineTo(innerRadius.toFloat(), height)
-        shapeCurveRect.set(innerMargin.toFloat(), height - innerRadius, innerRadius.toFloat(), height)
-        shapePath!!.arcTo(shapeCurveRect, 90f, SWEEP_ANGLE.toFloat())
-        shapePath!!.lineTo(innerMargin.toFloat(), height - innerOffset + 2 * innerMargin)
-        // bottom left curve
-        shapeCurveRect.set(innerMargin.toFloat(), height - innerOffset + innerMargin - outerRadius, (innerMargin + outerRadius).toFloat(), height - innerOffset + 2 * innerMargin)
-        shapePath!!.arcTo(shapeCurveRect, 90f, (-SWEEP_ANGLE).toFloat())
-        shapePath!!.lineTo((innerMargin + outerRadius).toFloat(), (innerMargin + innerOffset + outerRadius).toFloat())
-        //top left curve
-        shapeCurveRect.set(innerMargin.toFloat(), (innerOffset - innerMargin).toFloat(), (innerMargin + outerRadius).toFloat(), (innerOffset - innerMargin + outerRadius).toFloat())
-        shapePath!!.arcTo(shapeCurveRect, 0f, (-SWEEP_ANGLE).toFloat())
-        shapePath!!.lineTo(innerMargin.toFloat(), (innerOffset - innerMargin).toFloat())
-        shapePath!!.lineTo(innerMargin.toFloat(), innerRadius.toFloat())
-        shapeCurveRect.set(innerMargin.toFloat(), innerMargin.toFloat(), innerRadius.toFloat(), (innerMargin + innerRadius).toFloat())
-        shapePath!!.arcTo(shapeCurveRect, 180f, SWEEP_ANGLE.toFloat())
-        shapePath!!.close()
+        shapePath?.let {
+            //top left corner
+            it.moveTo(width - innerRadius, innerMargin.toFloat())
+            it.lineTo(width - innerRadius, innerMargin.toFloat())
+            //top right corner
+            shapeCurveRect.set(width - innerRadius, innerMargin.toFloat(), width, (innerMargin + innerRadius).toFloat())
+            it.arcTo(shapeCurveRect, 270f, SWEEP_ANGLE.toFloat())
+            it.lineTo(width, (innerOffset - innerMargin).toFloat())
+            //top right curve
+            shapeCurveRect.set(width - outerRadius, (innerOffset - innerMargin).toFloat(), width, (innerOffset - innerMargin + outerRadius).toFloat())
+            it.arcTo(shapeCurveRect, 270f, (-SWEEP_ANGLE).toFloat())
+            it.lineTo(width - outerRadius, height - innerOffset.toFloat() - outerRadius.toFloat())
+            //bottom right curve
+            shapeCurveRect.set(width - outerRadius, height - innerOffset + innerMargin - outerRadius, width, height - innerOffset + 2 * innerMargin)
+            it.arcTo(shapeCurveRect, 180f, (-SWEEP_ANGLE).toFloat())
+            it.lineTo(width, height - innerOffset + 2 * innerMargin)
+            //bottom right corner
+            it.lineTo(width, height - innerRadius)
+            shapeCurveRect.set(width - innerRadius, height - innerRadius, width, height)
+            it.arcTo(shapeCurveRect, 0f, SWEEP_ANGLE.toFloat())
+            //bottom left corner
+            it.lineTo(innerRadius.toFloat(), height)
+            shapeCurveRect.set(innerMargin.toFloat(), height - innerRadius, innerRadius.toFloat(), height)
+            it.arcTo(shapeCurveRect, 90f, SWEEP_ANGLE.toFloat())
+            it.lineTo(innerMargin.toFloat(), height - innerOffset + 2 * innerMargin)
+            // bottom left curve
+            shapeCurveRect.set(innerMargin.toFloat(), height - innerOffset + innerMargin - outerRadius, (innerMargin + outerRadius).toFloat(), height - innerOffset + 2 * innerMargin)
+            it.arcTo(shapeCurveRect, 90f, (-SWEEP_ANGLE).toFloat())
+            it.lineTo((innerMargin + outerRadius).toFloat(), (innerMargin + innerOffset + outerRadius).toFloat())
+            //top left curve
+            shapeCurveRect.set(innerMargin.toFloat(), (innerOffset - innerMargin).toFloat(), (innerMargin + outerRadius).toFloat(), (innerOffset - innerMargin + outerRadius).toFloat())
+            it.arcTo(shapeCurveRect, 0f, (-SWEEP_ANGLE).toFloat())
+            it.lineTo(innerMargin.toFloat(), (innerOffset - innerMargin).toFloat())
+            it.lineTo(innerMargin.toFloat(), innerRadius.toFloat())
+            shapeCurveRect.set(innerMargin.toFloat(), innerMargin.toFloat(), innerRadius.toFloat(), (innerMargin + innerRadius).toFloat())
+            it.arcTo(shapeCurveRect, 180f, SWEEP_ANGLE.toFloat())
+            it.close()
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        canvas.clipPath(shapePath!!)
-        canvas.drawPath(shapePath!!, shapePaint)
+        shapePath?.let {
+            canvas.clipPath(it)
+            canvas.drawPath(it, shapePaint)
+        }
     }
 
     companion object {
